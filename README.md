@@ -2,7 +2,7 @@
 Dans un terminal : ``git clone https://github.com/Willy-Gilly/calendApp.git``
 
 
-Puis dans le fichier de la solution : ``composer update``
+Puis dans le fichier de la solution : ``composer install``
 
 (Téléchargez  ici : https://getcomposer.org/download/)
 

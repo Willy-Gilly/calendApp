@@ -12,4 +12,5 @@ return [
     'authenticationTimoutError' => 'The page failed to load, please retry later.',
     'tooManyRequestError' => 'It seems that we received too many request from you, please try again later.',
     'serviceUnavailableError' => 'This service doesn\'t work for now, please try again later.',
+    'blank' => 'Blank',
 ];

@@ -37,39 +37,39 @@ Route::group(['middleware' => 'setLocale'], function() { //Lang changed by Middl
 });
 
 //home & menu
-Route::get('/home', 'View\HomeViewController@home')->middleware('auth')->name('home');
-Route::get('/', 'View\HomeViewController@welcome')->name('welcome');
+Route::get('/home', 'View\\HomeViewController@home')->middleware('auth')->name('home');
+Route::get('/', 'View\\HomeViewController@welcome')->name('welcome');
 
 Route::group(['middleware' => 'auth'], function() { // menu links
-    Route::get('profile','View\ProfileViewController@index')->name('profile');
+    Route::get('profile','View\\ProfileViewController@index')->name('profile');
 
-    Route::get('calendar/view','View\'CalendarViewController@myCalendar')->name('myCalendar');
-    Route::get('calendar/create','View\'CalendarViewController@createCalendar')->name('createCalendar');
-    Route::get('calendar/period/view','View\'CalendarViewController@myPeriod')->name('myPeriod');
-    Route::get('calendar/period/create','View\'CalendarViewController@createPeriod')->name('createPeriod');
+    Route::get('calendar/view','View\\CalendarViewController@viewCalendar')->name('myCalendar');
+    Route::get('calendar/create','View\\CalendarViewController@createCalendar')->name('createCalendar');
+    Route::get('calendar/period/view','View\\CalendarViewController@viewPeriod')->name('myPeriod');
+    Route::get('calendar/period/create','View\\CalendarViewController@createPeriod')->name('createPeriod');
 
-    Route::get('task/view','View\'TaskViewController@myTask')->name('myTask');
-    Route::get('task/create','View\'TaskViewController@createTask')->name('createTask');
+    Route::get('task/view','View\\TaskViewController@view')->name('view');
+    Route::get('task/create','View\\TaskViewController@create')->name('create');
 
-    Route::get('team/view','View\'TeamViewController@myTeam')->name('myTeam');
-    Route::get('team/join','View\'TeamViewController@join')->name('joinTeam');
-    Route::get('team/create','View\'TeamViewController@create')->name('createTeam');
+    Route::get('team/view','View\\TeamViewController@view')->name('view');
+    Route::get('team/join','View\\TeamViewController@join')->name('join');
+    Route::get('team/create','View\\TeamViewController@create')->name('create');
 
-    Route::get('structure/view','View\'StructureViewController@myStructure')->name('myStructure');
-    Route::get('structure/join','View\'StructureViewController@join')->name('joinStructure');
-    Route::get('structure/create','View\'StructureViewController@create')->name('createStructure');
+    Route::get('structure/view','View\\StructureViewController@view')->name('view');
+    Route::get('structure/join','View\\StructureViewController@join')->name('join');
+    Route::get('structure/create','View\\StructureViewController@create')->name('create');
 
-    Route::get('friend/view','View\'FriendViewController@view')->name('viewFriend');
-    Route::get('friend/add','View\'FriendViewController@add')->name('addFriend');
-    Route::get('friend/message','View\'FriendViewController@message')->name('messages');
+    Route::get('friend/view','View\\FriendViewController@view')->name('view');
+    Route::get('friend/add','View\\FriendViewController@add')->name('add');
+    Route::get('friend/message','View\\FriendViewController@message')->name('messages');
 
-    Route::get('settings','View\'SettingsViewController@index')->name('settings');
+    Route::get('settings','View\\SettingsViewController@index')->name('settings');
 
-    Route::get('notification/seeAll','View\'NotificationViewController@index')->name('seeNotification');
-    Route::get('notification/config','View\'NotificationViewController@config')->name('configNotif');
+    Route::get('notification/seeAll','View\\NotificationViewController@index')->name('see');
+    Route::get('notification/config','View\\NotificationViewController@config')->name('configNotif');
 });
 
-//TODO : change this route to something more smooth to change language
+//Change Language
 Route::get('/setLang/{lang}', function ($lang) {
     $supportedLang = array('en','fr','it','es','de');
     if(in_array($lang,$supportedLang))

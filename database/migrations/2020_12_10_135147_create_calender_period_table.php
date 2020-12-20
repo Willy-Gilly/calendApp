@@ -17,9 +17,9 @@ class CreateCalenderPeriodTable extends Migration
             $table->id();
             $table->bigInteger('calenderId');
             $table->string('name');
-            $table->string('color');
-            $table->boolean('isRepetitive');
-            $table->integer('repetitiveType');
+            $table->string('color')->default("#ffffff");
+            $table->boolean('isRepetitive')->default(false);
+            $table->integer('repetitiveType')->nullable();
             $table->integer('ifDaily')->nullable(); //0 : monday 1 : tuesday etc..
             $table->integer('ifMonthly')->nullable(); //0 : january 1 : february etc..
             $table->date('dateStart')->nullable();

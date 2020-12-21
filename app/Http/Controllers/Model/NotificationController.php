@@ -36,7 +36,10 @@ class NotificationController extends Controller
             {
                 if(!in_array($notif->getAttributes()["id"],$notifAlreadySent))
                 {
-                    array_push($notifications,["notificationText" => $notif->getAttributes()["textDisplayed"],"notificationType" => $notif->getAttributes()["notificationType"]]);
+                    array_push($notifications,["notificationText" => $notif->getAttributes()["textDisplayed"],
+                        "notificationType" => $notif->getAttributes()["notificationType"],
+                        "notificationId" => $notif->getAttributes()["id"],
+                        ]);
 
                     array_push($notifAlreadySent,$notif->getAttributes()["id"]); // here we add the notif id into the session variable
                     session(["notifications" => $notifAlreadySent]);
@@ -56,7 +59,10 @@ class NotificationController extends Controller
             $notifications = array();
             foreach($arr as $notif)
             {
-                array_push($notifications,["notificationText" => $notif->getAttributes()["textDisplayed"],"notificationType" => $notif->getAttributes()["notificationType"]]);
+                array_push($notifications,["notificationText" => $notif->getAttributes()["textDisplayed"],
+                    "notificationType" => $notif->getAttributes()["notificationType"],
+                    "notificationId" => $notif->getAttributes()["id"],
+                ]);
             }
         }
         return $notifications ?? [["textDisplayed" => "You must loggin to access to this function"]];

@@ -1,5 +1,5 @@
 @foreach($notifs as $notif)
-    <ul>
-        <li>{{$notif["notificationText"]}}</li>
+    <ul id="notification_{{$notif["notificationId"]}}" class="notification_{{$notif["notificationType"]}}">
+        <li id="notificationText_{{$notif["notificationId"]}}">{{$notif["notificationText"]}}</li>
     </ul>
 @endforeach

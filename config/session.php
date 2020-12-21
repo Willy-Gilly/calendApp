@@ -200,4 +200,6 @@ return [
 
     'lang' => 'en',
 
+    'notifications' => array(),
+
 ];

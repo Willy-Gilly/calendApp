@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers\View;
 
-use App\Http\Controllers\Controller;
 use App\Http\Controllers\Model\NotificationController;
-use App\Mail\TestMail;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
+use Throwable;
 
 class HomeViewController extends ViewController
 {
@@ -19,8 +16,18 @@ class HomeViewController extends ViewController
     {
         $notifs = NotificationController::getNewNotification();
         try {
-            return view('divUpdate.testNotif',["notifs" => $notifs])->render();
-        } catch (\Throwable $e) {
+            return view('divUpdate.newNotification',["notifs" => $notifs])->render();
+        } catch (Throwable $e) {
+            return '<p>Error while updating Div</p>';
+        }
+    }
+
+    public function getUnseenNotification()
+    {
+        $notifs = NotificationController::getUnseenNotification();
+        try {
+            return view('divUpdate.getUnseenNotification',["notifs" => $notifs])->render();
+        } catch (Throwable $e) {
             return '<p>Error while updating Div</p>';
         }
     }

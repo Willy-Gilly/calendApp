@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Auth;
 
 class NotificationController extends Controller
 {
+    public static function initNotif()
+    {
+        session(["notifications" => array()]);
+    }
+
     /**
      * @param int $id
      * @return Notification|array|Collection|Model
@@ -25,7 +30,35 @@ class NotificationController extends Controller
         {
             $authId = Auth::id();
             $arr = Notification::query()->select()->where([['userId',"=",$authId],["isRead","=",false]])->get()->all();
+            $notifications = array();
+            $notifAlreadySent = session()->get('notifications');
+            foreach($arr as $notif)
+            {
+                if(!in_array($notif->getAttributes()["id"],$notifAlreadySent))
+                {
+                    array_push($notifications,["notificationText" => $notif->getAttributes()["textDisplayed"],"notificationType" => $notif->getAttributes()["notificationType"]]);
+
+                    array_push($notifAlreadySent,$notif->getAttributes()["id"]); // here we add the notif id into the session variable
+                    session(["notifications" => $notifAlreadySent]);
+
+                }
+            }
         }
-        return $arr ?? "";
+        return $notifications ?? [["textDisplayed" => "You must loggin to access to this function"]];
+    }
+
+    public static function getUnseenNotification()
+    {
+        if(Auth::user())
+        {
+            $notSeen = session()->get('notifications');
+            $arr = Notification::query()->select()->whereIn('id',$notSeen)->get()->all();
+            $notifications = array();
+            foreach($arr as $notif)
+            {
+                array_push($notifications,["notificationText" => $notif->getAttributes()["textDisplayed"],"notificationType" => $notif->getAttributes()["notificationType"]]);
+            }
+        }
+        return $notifications ?? [["textDisplayed" => "You must loggin to access to this function"]];
     }
 }

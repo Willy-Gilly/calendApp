@@ -12,6 +12,7 @@ class Team extends Model
         "structureId", //can be null if no structure
         "leaderId", //must be a user
         "name", "teamLogo",
+        "toggleInvitationLink", "invitationLink",
         "created_at", "updated_at"
     ];
 }

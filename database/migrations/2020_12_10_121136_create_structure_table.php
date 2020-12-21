@@ -19,6 +19,8 @@ class CreateStructureTable extends Migration
             $table->bigInteger('ownerId');
             $table->string('emailReference');
             $table->string('structureLogo')->nullable();
+            $table->boolean('toggleInvitationLink')->default(false);
+            $table->string('invitationlink')->unique()->nullable();
             $table->timestamps();
         });
     }

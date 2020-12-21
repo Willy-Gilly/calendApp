@@ -19,6 +19,8 @@ class CreateTeamTable extends Migration
             $table->bigInteger('leaderId'); // must be a user
             $table->string('name');
             $table->string('teamLogo')->nullable();
+            $table->boolean('toggleInvitationLink')->default(false);
+            $table->string('invitationlink')->unique()->nullable();
             $table->timestamps();
         });
     }

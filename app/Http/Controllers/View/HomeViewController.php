@@ -26,7 +26,7 @@ class HomeViewController extends ViewController
     {
         $notifs = NotificationController::getUnseenNotification();
         try {
-            return view('divUpdate.getUnseenNotification',["notifs" => $notifs])->render();
+            return view('divUpdate.newNotification',["notifs" => $notifs])->render();
         } catch (Throwable $e) {
             return '<p>Error while updating Div</p>';
         }

@@ -8,8 +8,7 @@
 
 @section('content')
     <div class="row col-sm-12">
-        <div class="">
-
+        <div id="test" class="">
         </div>
     </div>
 @stop

@@ -81,4 +81,5 @@ Route::get('/setLang/{lang}', function ($lang) {
     return back();
 })->middleware('setLocale');
 
-
+//Updating Divs
+Route::get('/api/updateNotifs', 'View\\HomeViewController@addNotification')->name('updateNotifs');

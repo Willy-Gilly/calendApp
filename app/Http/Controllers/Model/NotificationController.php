@@ -54,8 +54,8 @@ class NotificationController extends Controller
     {
         if(Auth::user())
         {
-            $notSeen = session()->get('notifications');
-            $arr = Notification::query()->select()->whereIn('id',$notSeen)->get()->all();
+            $authId = Auth::id();
+            $arr = Notification::query()->select()->where([['userId',"=",$authId],["isRead","=",false]])->get()->all();
             $notifications = array();
             foreach($arr as $notif)
             {

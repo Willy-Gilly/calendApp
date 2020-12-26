@@ -18,4 +18,9 @@ return [
     'message' => ' New Messages',
     'invitation' => 'New Invitations',
     'seeAllNotifications' => 'See All Notifications',
+    'notificationType0' => 'Message',
+    'notificationType1' => 'Team Invitation',
+    'notificationType2' => 'Structure Invitation',
+    'notificationType3' => 'Friend Request',
+    'notificationType4' => 'A new Period just started',
 ];

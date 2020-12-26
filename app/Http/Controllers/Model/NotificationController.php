@@ -67,4 +67,41 @@ class NotificationController extends Controller
         }
         return $notifications ?? [["textDisplayed" => "You must login to access to this function"]];
     }
+
+    public static function getNumberNewMessage()
+    {
+        if(Auth::user())
+        {
+            $authId = Auth::id();
+            $nb = Notification::query()->select()->where([['userId',"=",$authId],["isRead","=",false],["notificationType","=","0"]])->count();
+        }
+        return $nb ?? [["textDisplayed" => "You must login to access to this function"]];
+    }
+    public static function getNumberNewTeamInvite()
+    {
+        if(Auth::user())
+        {
+            $authId = Auth::id();
+            $nb = Notification::query()->select()->where([['userId',"=",$authId],["isRead","=",false],["notificationType","=","1"]])->count();
+        }
+        return $nb ?? [["textDisplayed" => "You must login to access to this function"]];
+    }
+    public static function getNumberNewStructureInvite()
+    {
+        if(Auth::user())
+        {
+            $authId = Auth::id();
+            $nb = Notification::query()->select()->where([['userId',"=",$authId],["isRead","=",false],["notificationType","=","2"]])->count();
+        }
+        return $nb ?? [["textDisplayed" => "You must login to access to this function"]];
+    }
+    public static function getNumberFriendRequest()
+    {
+        if(Auth::user())
+        {
+            $authId = Auth::id();
+            $nb = Notification::query()->select()->where([['userId',"=",$authId],["isRead","=",false],["notificationType","=","3"]])->count();
+        }
+        return $nb ?? [["textDisplayed" => "You must login to access to this function"]];
+    }
 }

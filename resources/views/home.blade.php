@@ -9,7 +9,7 @@
 @section('content')
     <div class="row col-sm-12">
         <div class="row col-sm-5">
-            <button id="buttonTestToast" class="btn btn-primary col-sm-4" onclick="toastNotif('myText', 'myType')">
+            <button id="buttonTestToast" class="btn btn-primary col-sm-4" onclick="toastNotif('1', '0')">
                 Toast
             </button>
         </div>
@@ -24,7 +24,6 @@
 @stop
 
 @section('js')
-    <script src="{{ asset('js/updateDiv.js')}}"></script>
     <script>
         //Update notifs
         $.ready(

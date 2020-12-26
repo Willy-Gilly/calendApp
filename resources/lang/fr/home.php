@@ -16,4 +16,9 @@ return [
     'friendRequest' => 'Nouvelles Demandes d\'amis',
     'message' => 'Nouveaux Messages',
     'invitation' => 'Nouvelles Invitations',
+    'notificationType0' => 'Message',
+    'notificationType1' => 'Invitation d\'Équipe',
+    'notificationType2' => 'Invitation à une Structure',
+    'notificationType3' => 'Demande d\'Amis',
+    'notificationType4' => 'Une nouvelle période a commencé',
 ];

@@ -81,13 +81,17 @@ Route::get('/setLang/{lang}', function ($lang) {
     return back();
 })->middleware('setLocale');
 
+Route::group(['middleware' => 'auth'], function() { // Notifications
 //Updating Divs
-Route::get('/div/updateNotifs', 'View\\HomeViewController@addNotification')->middleware('auth')->name('updateNotifs');
-Route::get('/div/getUnseenNotifs', "View\\HomeViewController@getUnseenNotification")->middleware('auth')->name('getUnseenNotification');
+    Route::get('/div/updateNotifs', 'View\\HomeViewController@addNotification')->name('updateNotifs');
+    Route::get('/div/getUnseenNotifs', "View\\HomeViewController@getUnseenNotification")->name('getUnseenNotification');
 
 //Updating Menu
-Route::get('/div/menu/getNotifBoxLabel',"View\\HomeViewController@getMenuLabelBoxNotification")->middleware('auth');
-Route::get('/div/menu/getNumberNewNotif',"View\\HomeViewController@getMenuNumberNotification")->middleware('auth');
-Route::get('/div/menu/getNumberNewMessage',"View\\HomeViewController@getMenuNumberNewMessage")->middleware('auth');
-Route::get('/div/menu/getNumberNewFriendRequest',"View\\HomeViewController@getMenuNumberNewFriendRequest")->middleware('auth');
-Route::get('/div/menu/getNumberNewInvitation',"View\\HomeViewController@getMenuNumberNewInvitation")->middleware('auth');
+    Route::get('/div/menu/getNotifBoxLabel', "View\\HomeViewController@getMenuLabelBoxNotification");
+    Route::get('/div/menu/getNumberNewNotif', "View\\HomeViewController@getMenuNumberNotification");
+    Route::get('/div/menu/getNumberNewMessage', "View\\HomeViewController@getMenuNumberNewMessage");
+    Route::get('/div/menu/getNumberNewFriendRequest', "View\\HomeViewController@getMenuNumberNewFriendRequest");
+    Route::get('/div/menu/getNumberNewInvitation', "View\\HomeViewController@getMenuNumberNewInvitation");
+    Route::get('/div/menu/text/notificationType/{notificationType?}', 'View\\HomeViewController@getNotificationName');
+    Route::get('/div/menu/text/notificationText/{notifId?}', 'View\\HomeViewController@getNotificationText');
+});

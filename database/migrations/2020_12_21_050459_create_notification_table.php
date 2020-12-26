@@ -16,7 +16,7 @@ class CreateNotificationTable extends Migration
         Schema::create('notification', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('userId');
-            $table->integer('notificationType')->default(0); // 0 : message; 1 : team invite, 2 : structure invite; 3 : period start;
+            $table->integer('notificationType')->default(0); // 0 : message; 1 : team invite, 2 : structure invite; 3 : friend, 4 : period start;
             $table->string('textDisplayed')->nullable();
             $table->boolean('isRead')->default(false);
             $table->timestamps();

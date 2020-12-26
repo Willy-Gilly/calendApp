@@ -48,16 +48,27 @@ function updateNotifBox()
     });
 }
 
-function toastNotif(innerText, notificationType)
+function toastNotif(idNotif, notificationType)
 {
-    $(document).Toasts('create',
+    let a = '';
+    $.get('/div/menu/text/notificationType/'+notificationType, {async: false}, function (response) {
+        a = response;
+    });
+    let b = '';
+    $.get('/div/menu/text/notificationText/'+idNotif, {async: false}, function (response) {
+
+        b = response;
+    });
+    setTimeout(() => {
+        $(document).Toasts('create',
         {
-            title: 'New Notification '+ notificationType,
+            title: a,
             autohide: true,
             delay: 7500,
-            body: innerText,
-            imageAlt: 'Image Failed to Load',
-        });
+            body: b,
+            class: 'bg-gradiant-purple',
+        });}
+        ,2000);
 }
 
 function getNewNotification(url,divToUpdate ,params) {
@@ -73,11 +84,8 @@ function getNewNotification(url,divToUpdate ,params) {
             let notificationType = htmlObject.attr('class').split("_")[1];
             //console.log(notificationType)
             let idElementSplit = idElement.split("_")[1];
-            let idNotificationText = "#notificationText_"+idElementSplit;
-            //console.log(idNotificationText)
-            let notificationText = $(idNotificationText).text();
-            //console.log(notificationText);
-            toastNotif(notificationText,notificationType);
+
+            toastNotif(idElementSplit,notificationType);
         }
     });
 }

@@ -13,4 +13,9 @@ return [
     'tooManyRequestError' => 'It seems that we received too many request from you, please try again later.',
     'serviceUnavailableError' => 'This service doesn\'t work for now, please try again later.',
     'blank' => 'Blank',
+    'notification' => 'New Notifications',
+    'friendRequest' => 'New Friend Requests',
+    'message' => ' New Messages',
+    'invitation' => 'New Invitations',
+    'seeAllNotifications' => 'See All Notifications',
 ];

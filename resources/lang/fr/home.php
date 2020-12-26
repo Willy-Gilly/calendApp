@@ -11,5 +11,9 @@ return [
     'unauthorizedError' => 'Il semblerait que vous n\'ayez pas les droits pour réaliser l\'action, si vous pensez que c\'est une erreur, veuillez nous contacter.',
     'authenticationTimoutError' => 'La page a échoué dans son chargement, veuillez réessayer plus tard.',
     'tooManyRequestError' => 'Nos services ont reçu trop de requêtes de votre part d\'un coup. Veuillez réessayer plus tard.',
-    'serviceUnavailableError' => 'Ce service ne semble pas fonctionner pour le moment, veuillez réessayer plus tard.'
+    'serviceUnavailableError' => 'Ce service ne semble pas fonctionner pour le moment, veuillez réessayer plus tard.',
+    'notification' => 'Nouvelles Notifications',
+    'friendRequest' => 'Nouvelles Demandes d\'amis',
+    'message' => 'Nouveaux Messages',
+    'invitation' => 'Nouvelles Invitations',
 ];

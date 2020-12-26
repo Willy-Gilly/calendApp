@@ -16,7 +16,7 @@
 
         {{-- Label (optional) --}}
         @if(isset($item['label']))
-            <span class="badge badge-{{ $item['label_color'] ?? 'primary' }}">
+            <span class="badge badge-{{ $item['label_color'] ?? 'primary' }}" @if(isset($item['label_id'])) id="{{$item['label_id']}}" @endif>
                 {{ $item['label'] }}
             </span>
         @endif

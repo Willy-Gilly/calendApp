@@ -47,7 +47,7 @@ class NotificationController extends Controller
                 }
             }
         }
-        return $notifications ?? [["textDisplayed" => "You must loggin to access to this function"]];
+        return $notifications ?? [["textDisplayed" => "You must login to access to this function"]];
     }
 
     public static function getUnseenNotification()
@@ -65,6 +65,6 @@ class NotificationController extends Controller
                 ]);
             }
         }
-        return $notifications ?? [["textDisplayed" => "You must loggin to access to this function"]];
+        return $notifications ?? [["textDisplayed" => "You must login to access to this function"]];
     }
 }

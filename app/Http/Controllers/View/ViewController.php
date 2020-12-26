@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\View;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Model\NotificationController;
 
 abstract class ViewController extends Controller
 {
@@ -20,6 +20,10 @@ abstract class ViewController extends Controller
 
     public function home()
     {
+        if(session()->get('notifications') == null)
+        {
+            NotificationController::initNotif();
+        }
         return view('home');
     }
 

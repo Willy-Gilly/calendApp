@@ -233,12 +233,47 @@ return [
     'menu' => [
         //Unused for now, recent notifications box :
         [
+            'label'       => 0,
+            'label_color' => 'success',
+            'label_id' => 'notificationNumberLabelId',
             'text' => '',
-            'id' => 'notificationBox',
             'icon' => 'fas fa-bell',
             'url' => '#',
             'icon_color' => 'green',
             'topnav_right' => true,
+            'icon_id' => 'notificationNumberSpanId',
+            'submenu' => [
+                [
+                    'text' => '0 Notifications',
+                    'inside_id' => 'notificationNumberId',
+                    'dropdown_header' => true,
+                    'url' => '',
+                    'disabled' => true,
+                ],
+                [
+                    'text' => '0 Nouveaux Messages',
+                    'inside_id' => 'notificationNewMessageId',
+                    'icon' => 'fas fa-envelope mr-2',
+                    'url' => '',
+                ],
+                [
+                    'text' => '0 Demandes d\'amis',
+                    'inside_id' => 'notificationFriendRequestId',
+                    'icon' => 'fas fa-users mr-2',
+                    'url' => '',
+                ],
+                [
+                    'text' => '0 Invitations à une structure ou une équipe',
+                    'inside_id' => 'notificationInvitationId',
+                    'icon' => 'fas fa-file mr-2',
+                    'url' => '',
+                ],
+                [
+                    'text' => 'seeAllNotifications',
+                    'dropdown_footer' => true,
+                    'url' => '',
+                ],
+            ],
         ],
         //profile
         [

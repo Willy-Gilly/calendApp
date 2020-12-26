@@ -82,5 +82,12 @@ Route::get('/setLang/{lang}', function ($lang) {
 })->middleware('setLocale');
 
 //Updating Divs
-Route::get('/div/updateNotifs', 'View\\HomeViewController@addNotification')->name('updateNotifs');
-Route::get('/div/getUnseenNotifs', "View\\HomeViewController@getUnseenNotification")->name('getUnseenNotification');
+Route::get('/div/updateNotifs', 'View\\HomeViewController@addNotification')->middleware('auth')->name('updateNotifs');
+Route::get('/div/getUnseenNotifs', "View\\HomeViewController@getUnseenNotification")->middleware('auth')->name('getUnseenNotification');
+
+//Updating Menu
+Route::get('/div/menu/getNotifBoxLabel',"View\\HomeViewController@getMenuLabelBoxNotification")->middleware('auth');
+Route::get('/div/menu/getNumberNewNotif',"View\\HomeViewController@getMenuNumberNotification")->middleware('auth');
+Route::get('/div/menu/getNumberNewMessage',"View\\HomeViewController@getMenuNumberNewMessage")->middleware('auth');
+Route::get('/div/menu/getNumberNewFriendRequest',"View\\HomeViewController@getMenuNumberNewFriendRequest")->middleware('auth');
+Route::get('/div/menu/getNumberNewInvitation',"View\\HomeViewController@getMenuNumberNewInvitation")->middleware('auth');

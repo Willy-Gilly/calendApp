@@ -50,4 +50,5 @@ return [
     'notifications'                 => 'Notification',
     'see all notifications'         => 'Voir toutes les Notifications',
     'notification configuration'    => 'Configuration des Notifs',
+    'seeAllNotifications'           => 'Voir toute les notifications',
 ];

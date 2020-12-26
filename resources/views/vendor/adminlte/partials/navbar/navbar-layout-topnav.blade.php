@@ -34,16 +34,6 @@
             {{-- Custom right links --}}
             @yield('content_top_nav_right')
 
-            <li class="nav-item">
-                <a class="nav-link" href="#" onclick="event.preventDefault(); document.getElementById('language').submit();">
-                    <i class="fas fa-language"></i>
-                    {{ __('adminlte::adminlte.lang') }}
-                </a>
-                <form id="language" action="#" method="POST" style="display: none;">
-                    {{ csrf_field() }}
-                </form>
-            </li>
-
             {{-- Configured right links --}}
             @each('adminlte::partials.navbar.menu-item', $adminlte->menu('navbar-right'), 'item')
 

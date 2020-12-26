@@ -29,52 +29,14 @@
         //Update notifs
         $.ready(
             $(function() {
-                doGetAdd("/div/getUnseenNotifs",'#test');//Works
-
+                updateNotif() // Pour l'utiliser de manière instantanée
                 let f = function() {
-                    getNewNotification("/div/updateNotifs",'#test');//Works
+                    updateNotif();
                 };
                 f()
                 window.setInterval(f, 5000); // (function executed, milliseconds)
             })
         );
     </script>
-    <script>
-        function toastNotif(innerText, notificationType)
-        {
-            $(document).Toasts('create',
-                {
-                    title: 'New Notification '+ notificationType,
-                    autohide: true,
-                    delay: 7500,
-                    body: innerText,
-                    image: '{{asset('image/monImage.jpg')}}',
-                    imageAlt: 'Image Failed to Load',
-                });
-        }
-    </script>
-    <script>
 
-        function getNewNotification(url,divToUpdate ,params) {
-            params = params || {}
-            $.get(url, params, function(response) { // requesting url which in form
-                //console.log(response);
-                $(divToUpdate).append(response); // getting response and pushing to element with id #response
-                if(!(response ===  ""))
-                {
-                    let htmlObject = $(response);
-                    let idElement = htmlObject.attr('id');
-                    console.log(idElement);
-                    let notificationType = htmlObject.attr('class').split("_")[1];
-                    console.log(notificationType)
-                    let idElementSplit = idElement.split("_")[1];
-                    let idNotificationText = "#notificationText_"+idElementSplit;
-                    console.log(idNotificationText)
-                    let notificationText = $(idNotificationText).text();
-                    console.log(notificationText);
-                    toastNotif(notificationText,notificationType);
-                }
-            });
-        }
-    </script>
 @stop

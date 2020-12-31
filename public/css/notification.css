@@ -1,0 +1,4 @@
+.input-friendRequest:checked ~ .custom-control-label::before{
+    border-color: #00f2ff;
+    background-color: #00f2ff;
+}

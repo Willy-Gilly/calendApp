@@ -83,11 +83,11 @@ return [
     |
     */
 
-    'layout_topnav' => null,
-    'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => true,
-    'layout_fixed_footer' => null,
+    'layout_topnav' => false,
+    'layout_boxed' => false,
+    'layout_fixed_sidebar' => ['xs' => false, 'sm' => false, 'md' => true, 'lg' => true, 'xl' => true],
+    'layout_fixed_navbar' => ['xs' => false, 'sm' => false, 'md' => false, 'lg' => false, 'xl' => false],
+    'layout_fixed_footer' => ['xs' => false, 'sm' => false, 'md' => false, 'lg' => false, 'xl' => false],
 
     /*
     |--------------------------------------------------------------------------
@@ -271,7 +271,7 @@ return [
                 [
                     'text' => 'seeAllNotifications',
                     'dropdown_footer' => true,
-                    'url' => '',
+                    'url' => 'notification/seeAll',
                 ],
             ],
         ],

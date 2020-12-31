@@ -95,3 +95,14 @@ function updateNotif()
     getNewNotification("/div/updateNotifs",'');//Works
     updateNotifBox();
 }
+
+$.ready(
+    $(function() {
+        updateNotif()
+        let f = function() {
+            updateNotif();
+        };
+        f()
+        window.setInterval(f, 5000);
+    })
+);

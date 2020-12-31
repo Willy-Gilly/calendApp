@@ -24,6 +24,10 @@ class NotificationController extends Controller
         return Notification::all()->find($id);
     }
 
+    /**
+     * @return array|\string[][]
+     * only get the new ones, not those that are already received.
+     */
     public static function getNewNotification()
     {
         if(Auth::user())
@@ -40,16 +44,18 @@ class NotificationController extends Controller
                         "notificationType" => $notif->getAttributes()["notificationType"],
                         "notificationId" => $notif->getAttributes()["id"],
                         ]);
-
                     array_push($notifAlreadySent,$notif->getAttributes()["id"]); // here we add the notif id into the session variable
                     session(["notifications" => $notifAlreadySent]);
-
                 }
             }
         }
         return $notifications ?? [["textDisplayed" => "You must login to access to this function"]];
     }
 
+    /**
+     * @return array|\string[][]
+     * the difference between the first one is that we will get ALL unseen notification, even if that one is already sent
+     */
     public static function getUnseenNotification()
     {
         if(Auth::user())

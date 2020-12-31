@@ -1,5 +1,5 @@
 <li class="nav-item">
-    <a class="nav-link" href="#" data-widget="control-sidebar"
+    <a id="navbarTogglerRight" class="nav-link" href="#" data-widget="control-sidebar"
         @if(!config('adminlte.right_sidebar_slide'))
             data-controlsidebar-slide="false"
         @endif

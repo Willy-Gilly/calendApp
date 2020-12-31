@@ -12,7 +12,7 @@ class HomeViewController extends ViewController
     {
         parent::__construct();
     }
-
+    //Don't use this one
     public function addNotification()
     {
         $notifs = NotificationController::getNewNotification();
@@ -22,7 +22,7 @@ class HomeViewController extends ViewController
             return '<p>Error while updating Div</p>';
         }
     }
-
+    //Don't use this one
     public function getUnseenNotification()
     {
         $notifs = NotificationController::getUnseenNotification();
@@ -33,21 +33,29 @@ class HomeViewController extends ViewController
         }
     }
 
+    /**
+     * @return string
+     * The number of the span in notif icon menu
+     */
     public function getMenuLabelBoxNotification()
     {
         $arr = NotificationController::getUnseenNotification();
         $nb = count($arr);
-        if($nb != 0)
+        if($nb != 0) // if number, it will display the number
         {
             $number = $nb;
         }
-        else
+        else // else, return empty string so it makes the number disappear
         {
             $number = '';
         }
         return strval($number);
     }
 
+    /**
+     * @return string
+     * get the text when opening notif box
+     */
     public function getMenuNumberNotification()
     {
         $arr = NotificationController::getUnseenNotification();
@@ -63,6 +71,10 @@ class HomeViewController extends ViewController
         return strval($number).' '. __('home.notification');
     }
 
+    /**
+     * @return string
+     * get number of new messages when opening notif box
+     */
     public function getMenuNumberNewMessage()
     {
         $number = NotificationController::getNumberNewMessage();
@@ -70,6 +82,10 @@ class HomeViewController extends ViewController
         return $icon.strval($number).' '. __('home.message');
     }
 
+    /**
+     * @return string
+     * get number of new friend requests when opening notif box
+     */
     public function getMenuNumberNewFriendRequest()
     {
         $number = NotificationController::getNumberFriendRequest();
@@ -77,6 +93,10 @@ class HomeViewController extends ViewController
         return $icon.$number .' '. __('home.friendRequest');
     }
 
+    /**
+     * @return string
+     * get number of new invitation when opening notif box
+     */
     public function getMenuNumberNewInvitation()
     {
         $number = NotificationController::getNumberNewStructureInvite()+NotificationController::getNumberNewTeamInvite();
@@ -84,6 +104,11 @@ class HomeViewController extends ViewController
         return $icon.$number .' '. __('home.invitation');
     }
 
+    /**
+     * @param int $notificationType
+     * @return array|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Translation\Translator|string|null
+     * used to get te text of the notification type correctly translated when receiving a notification (alert)
+     */
     public function getNotificationName($notificationType = 0)
     {
         if($notificationType > 4 || $notificationType < 0)
@@ -93,6 +118,11 @@ class HomeViewController extends ViewController
         return __('home.notificationType'.$notificationType);
     }
 
+    /**
+     * @param int $notifId
+     * @return array|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Translation\Translator|mixed|string|null
+     * get the text of the notification (alert)
+     */
     public function getNotificationText($notifId = 0)
     {
         $notif = NotificationController::getFromId($notifId);

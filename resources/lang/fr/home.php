@@ -21,4 +21,5 @@ return [
     'notificationType2' => 'Invitation à une Structure',
     'notificationType3' => 'Demande d\'Amis',
     'notificationType4' => 'Une nouvelle période a commencé',
+    'notificationPage' => 'Notifications',
 ];

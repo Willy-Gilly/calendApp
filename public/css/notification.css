@@ -1,4 +1,151 @@
-.input-friendRequest:checked ~ .custom-control-label::before{
-    border-color: #00f2ff;
-    background-color: #00f2ff;
+.optionRowDiv{
+    padding-top: 15px;
+    padding-left: 7.5%;
 }
+.input-friendRequest:checked ~ .custom-control-label::before{
+    border-color: #17a2b8;
+    background-color: #17a2b8;
+}
+.input-messages:checked ~ .custom-control-label::before{
+    border-color: #007bff;
+    background-color: #007bff;
+}
+.input-teamInvite:checked ~ .custom-control-label::before{
+    border-color: #ffc107;
+    background-color: #ffc107;
+}
+.input-structureInvite:checked ~ .custom-control-label::before{
+    border-color: #28a745;
+    background-color: #28a745;
+}
+.row-hidden{
+    visibility: hidden;
+    display: none;
+}
+.deleteNotifButton{
+    padding-right: 5%;
+}
+.form-margin-correct{
+    margin-bottom: 0;
+}
+.inviteDivPadding{
+    padding-bottom: 0;
+    padding-top: 15px;
+}
+.cardBodySocial{
+    padding-bottom: 0;
+    padding-top: 15px;
+}
+
+
+.btn-friendRequest {
+    color: #17a2b8;
+    border-color: #17a2b8;
+}
+.btn-friendRequest:hover {
+    color: #ffffff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+.btn-friendRequest:focus, .btn-friendRequest.focus {
+    box-shadow: 0 0 0 0 rgba(23, 162, 184, 0.5);
+}
+.btn-friendRequest.disabled, .btn-friendRequest:disabled {
+    color: #17a2b8;
+    background-color: transparent;
+}
+.btn-friendRequest:not(:disabled):not(.disabled):active, .btn-friendRequest:not(:disabled):not(.disabled).active,
+.show > .btn-friendRequest.dropdown-toggle {
+    color: #ffffff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+.btn-friendRequest:not(:disabled):not(.disabled):active:focus, .btn-friendRequest:not(:disabled):not(.disabled).active:focus,
+.show > .btn-friendRequest.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0 rgba(13, 97, 110, 0.5);
+}
+
+
+.btn-messages {
+    color: #007bff;
+    border-color: #007bff;
+}
+.btn-messages:hover {
+    color: #ffffff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-messages:focus, .btn-messages.focus {
+    box-shadow: 0 0 0 0 #0155b7;
+}
+.btn-messages.disabled, .btn-messages:disabled {
+    color: #007bff;
+    background-color: transparent;
+}
+.btn-messages:not(:disabled):not(.disabled):active, .btn-messages:not(:disabled):not(.disabled).active,
+.show > .btn-messages.dropdown-toggle {
+    color: #007bff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-messages:not(:disabled):not(.disabled):active:focus, .btn-messages:not(:disabled):not(.disabled).active:focus,
+.show > .btn-messages.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0 #0050ac;
+}
+
+
+.btn-teamInvite {
+    color: #ffc107;
+    border-color: #ffc107;
+}
+.btn-teamInvite:hover {
+    color: #000000;
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+.btn-teamInvite:focus, .btn-teamInvite.focus {
+    box-shadow: 0 0 0 0 #ab8308;
+}
+.btn-teamInvite.disabled, .btn-teamInvite:disabled {
+    color: #ffc107;
+    background-color: #a5a5a5;
+}
+.btn-teamInvite:not(:disabled):not(.disabled):active, .btn-teamInvite:not(:disabled):not(.disabled).active,
+.show > .btn-teamInvite.dropdown-toggle {
+    color: #ffc107;
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+.btn-teamInvite:not(:disabled):not(.disabled):active:focus, .btn-teamInvite:not(:disabled):not(.disabled).active:focus,
+.show > .btn-teamInvite.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0 #bf9206;
+}
+
+
+.btn-structureInvite {
+    color: #28a745;
+    border-color: #28a745;
+}
+.btn-structureInvite:hover {
+    color: #ffffff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+.btn-structureInvite:focus, .btn-structureInvite.focus {
+    box-shadow: 0 0 0 0 #1c7330;
+}
+.btn-structureInvite.disabled, .btn-structureInvite:disabled {
+    color: #28a745;
+    background-color: transparent;
+}
+.btn-structureInvite:not(:disabled):not(.disabled):active, .btn-structureInvite:not(:disabled):not(.disabled).active,
+.show > .btn-structureInvite.dropdown-toggle {
+    color: #28a745;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+.btn-structureInvite:not(:disabled):not(.disabled):active:focus, .btn-structureInvite:not(:disabled):not(.disabled).active:focus,
+.show > .btn-structureInvite.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0 #28a745;
+}
+

@@ -38,11 +38,17 @@ function updateNotifBox()
         labelNotifBox.text(response); // getting response and pushing to element with id #response
         if(response === '')
         {
-            labelNotifBox.removeClass('badge badge-success');
+            if(labelNotifBox.hasClass('badge badge-success'))
+            {
+                labelNotifBox.removeClass('badge badge-success');
+            }
         }
         else
         {
-            labelNotifBox.addClass('badge badge-success');
+            if(!labelNotifBox.hasClass('badge badge-success'))
+            {
+                labelNotifBox.addClass('badge badge-success');
+            }
         }
         return response;
     });

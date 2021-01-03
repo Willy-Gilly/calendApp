@@ -80,9 +80,12 @@ Route::get('/setLang/{lang}', function ($lang) {
     }
     return back();
 })->middleware('setLocale');
+Route::get('lang/get', function () {
+    return session()->get('lang');
+})->middleware('setLocale');
 
 Route::group(['middleware' => 'auth'], function() { // Notifications
-//Updating Divs
+//Toast only
     Route::get('/div/updateNotifs', 'View\\HomeViewController@addNotification')->name('updateNotifs');
     Route::get('/div/getUnseenNotifs', "View\\HomeViewController@getUnseenNotification")->name('getUnseenNotification');
 

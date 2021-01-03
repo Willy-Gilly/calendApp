@@ -7,6 +7,8 @@ return [
     'newFriendRequest' => "new friend requests",
     'newInvitations' => "new invitations",
     'newNotification' => "new notifications",
-    'inviteTeam' => "Invitation from teams",
-    'inviteStructure' => "Invitation from Structures"
+    'inviteTeam' => "Invitations from teams",
+    'inviteStructure' => "Invitations from Structures",
+    'checkAll' => "Check All",
+    'delete' => "Mark them as read"
 ];

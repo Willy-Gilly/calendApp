@@ -31,7 +31,6 @@
                     </div>
                     <div class="card-body cardBodySocial">
                         <form class="form-group">
-                            @include('datatable.datatables', $tables["tableFr"] ?? [])
                             <div class="row optionRowDiv">
                                 <div class="col-sm custom-control custom-checkbox">
                                     <input class="custom-control-input input-friendRequest" type="checkbox" id="checkAllFriendRequest" checked="">
@@ -60,7 +59,6 @@
                     </div>
                     <div class="card-body cardBodySocial">
                         <form class="form-group">
-                            @include('datatable.datatables', $tables["tableMessage"] ?? [])
                             <div class="row optionRowDiv">
                                 <div class="col-sm custom-control custom-checkbox">
                                     <input class="custom-control-input input-messages" type="checkbox" id="checkAllMessage" checked="">
@@ -102,7 +100,7 @@
                             </div>
                             <div class="card-body cardBodySocial">
                                 <form class="form-group form-margin-correct">
-                                    @include('datatable.datatables', $tables["tableTeamInvite"] ?? [])
+
                                     <div class="row optionRowDiv">
                                         <div class="col-sm custom-control custom-checkbox">
                                             <input class="custom-control-input input-teamInvite" type="checkbox" id="checkAllTeamInvite" checked="">
@@ -129,7 +127,6 @@
                             </div>
                             <div class="card-body cardBodySocial">
                                 <form class="form-group form-margin-correct">
-                                    @include('datatable.datatables', $tables["tableStructureInvite"] ?? [])
                                     <div class="row optionRowDiv">
                                         <div class="col-sm custom-control custom-checkbox">
                                             <input class="custom-control-input input-structureInvite" type="checkbox" id="checkAllStructureInvite" checked="">
@@ -154,7 +151,7 @@
     <script>
         $.ready(
             $(function() {
-                prepareDatatables('{{session()->get('lang')}}');
+
             })
         );
     </script>

@@ -27,6 +27,7 @@
 }
 .form-margin-correct{
     margin-bottom: 0;
+    padding-bottom: 0;
 }
 .inviteDivPadding{
     padding-bottom: 0;
@@ -148,4 +149,3 @@
 .show > .btn-structureInvite.dropdown-toggle:focus {
     box-shadow: 0 0 0 0 #28a745;
 }
-

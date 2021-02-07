@@ -254,7 +254,7 @@ return [
                     'text' => '0 Nouveaux Messages',
                     'inside_id' => 'notificationNewMessageId',
                     'icon' => 'fas fa-envelope mr-2',
-                    'url' => '',
+                    'url' => 'notification/seeAll',
                 ],
                 [
                     'text' => '0 Demandes d\'amis',

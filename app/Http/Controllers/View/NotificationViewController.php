@@ -20,16 +20,16 @@ class NotificationViewController extends ViewController
 
         $tableFrColumns = [
             [
-                "name" => 'User'
+                "name" => 'Id'
             ],
             [
-                "name" => 'Date'
+                "name" => 'Text'
             ],
             [
-                "name" => 'Text',
+                "name" => 'isRead',
             ],
         ];
-        $tableFrRows = [];
+        $tableFrRows = self::prepareFriendRequestTable();
         $tableFr = [
             "tableId" => "friendRequestDatatable",
             "tableColumns" => $tableFrColumns,
@@ -117,5 +117,25 @@ class NotificationViewController extends ViewController
     public function config()
     {
         return view('layouts.blank');
+    }
+
+    public static function prepareFriendRequestTable()
+    {
+        $data = NotificationController::getFriendRequests();
+        $arr = [];
+        foreach ($data as $oneLine)
+        {
+            array_push($arr,[
+                "id" => "friendRequestRow_".$oneLine["id"],
+                "data" => [
+                    ["id" => "friendRequestRow_idRow_".$oneLine["id"],
+                        "text" => $oneLine["id"]],
+                    ["id" => "friendRequestRow_textRow_".$oneLine["id"],
+                        "text" => $oneLine["textDisplayed"]],
+                    ["id" => "friendRequestRow_isReadRow_".$oneLine["id"],
+                        "text" => $oneLine["isRead"]],
+                ]]);
+        }
+        return $arr;
     }
 }

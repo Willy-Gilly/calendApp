@@ -110,4 +110,29 @@ class NotificationController extends Controller
         }
         return $nb ?? [["textDisplayed" => "You must login to access to this function"]];
     }
+
+    /**
+     * @return array
+     */
+    public static function getFriendRequests()
+    {
+        if(Auth::user())
+        {
+            $authId = Auth::id();
+            $query = Notification::query()->select()->where([['userId',"=",$authId],["isRead","=",false],["notificationType","=","0"]])->get();
+        }
+        $arr = [];
+        foreach($query ?? [] as $oneLine)
+        {
+            $attributes = $oneLine->getAttributes();
+            //$friendRequest = FriendlistController::getFromId($attributes["originalId"])->getAttributes();
+            array_push($arr,[
+                "id" => $attributes["id"],
+                "textDisplayed" => $attributes["textDisplayed"],
+                "isRead" => $attributes["isRead"],
+                //"friendRequest" => $friendRequest,
+            ]);
+        }
+        return $arr;
+    }
 }

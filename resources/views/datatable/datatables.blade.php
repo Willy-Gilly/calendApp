@@ -14,7 +14,7 @@
         </thead>
         <tbody>
             @foreach($tableRows ?? [] as $row)
-            <tr id="{{$row["id"] ?? ''}}" class="{{$row["class"]}}">
+            <tr id="{{$row["id"] ?? ''}}" class="{{$row["class"] ?? ''}}">
                 @foreach($row["data"] ?? [] as $cell)
                     <td role="row" id="{{$cell["id"] ?? ''}}"
                         class="{{$cell["class"] ?? ''}} text-center">

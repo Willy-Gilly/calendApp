@@ -19,6 +19,7 @@ class CreateNotificationTable extends Migration
             $table->integer('notificationType')->default(0); // 0 : message; 1 : team invite, 2 : structure invite; 3 : friend, 4 : period start;
             $table->string('textDisplayed')->nullable();
             $table->boolean('isRead')->default(false);
+            $table->bigInteger('originalId')->nullable();
             $table->timestamps();
         });
     }

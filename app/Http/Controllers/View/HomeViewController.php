@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\View;
 
 use App\Http\Controllers\Model\NotificationController;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Auth;
 use Throwable;
 
@@ -106,7 +107,7 @@ class HomeViewController extends ViewController
 
     /**
      * @param int $notificationType
-     * @return array|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Translation\Translator|string|null
+     * @return array|Application|\Illuminate\Contracts\Translation\Translator|string|null
      * used to get te text of the notification type correctly translated when receiving a notification (alert)
      */
     public function getNotificationName($notificationType = 0)
@@ -120,7 +121,7 @@ class HomeViewController extends ViewController
 
     /**
      * @param int $notifId
-     * @return array|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Translation\Translator|mixed|string|null
+     * @return array|Application|\Illuminate\Contracts\Translation\Translator|mixed|string|null
      * get the text of the notification (alert)
      */
     public function getNotificationText($notifId = 0)

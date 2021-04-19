@@ -110,7 +110,6 @@ class NotificationViewController extends ViewController
                 "tableStructureInvite" => $tableStructureInvite,
             ]
         ];
-
         return view('notifications', $data);
     }
     // url : /notification/config

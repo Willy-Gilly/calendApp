@@ -3,7 +3,7 @@
 @section('title', 'Erreur')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">Erreur 404</h1>
+    <h1 class="m-0 text-dark">{{__('home.missingError')}}</h1>
     @php header("HTTP/1.0 404 Not Found"); @endphp
 @stop
 
@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="custom-404-div">
-                <a class="btn btn-block btn-primary btn-lg custom-404-button" href="{{ url()->previous() }}"> Retour </a>
+                <a class="btn btn-block btn-primary btn-lg custom-404-button" href="{{ url()->previous() }}"> {{__('home.back')}} </a>
             </div>
         </div>
     </div>

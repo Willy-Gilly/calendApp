@@ -8,6 +8,14 @@ use Illuminate\Http\JsonResponse;
 class BaseController extends Controller
 {
     /**
+     * BaseController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware("json.response");
+    }
+
+    /**
      * success response method.
      *
      * @param $result

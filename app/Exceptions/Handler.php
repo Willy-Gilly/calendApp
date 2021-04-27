@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use App\Http\Controllers\API\BaseController;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\JsonResponse;
@@ -67,18 +68,39 @@ class Handler extends ExceptionHandler
         }
         else if($exception instanceof ServiceUnavailableHttpException) {
             if (!$request->ajax()) {
-                return redirect('error503');
+                if(!$request->wantsJson())
+                {
+                    return redirect('error503');
+                }
+                else
+                {
+                    return (new BaseController())->sendError(__('home.error').' 503',[],503);
+                }
             }
         }
         else if($exception instanceof TooManyRequestsHttpException)
         {
             if (!$request->ajax()) {
-                return redirect('error429');
+                if(!$request->wantsJson())
+                {
+                    return redirect('error429');
+                }
+                else
+                {
+                    return (new BaseController())->sendError(__('home.error').' 423',[],423);
+                }
             }
         }
         else if($exception instanceof UnauthorizedHttpException){
             if (!$request->ajax()) {
-                return redirect('error403');
+                if(!$request->wantsJson())
+                {
+                    return redirect('error403');
+                }
+                else
+                {
+                    return (new BaseController())->sendError(__('home.error').' 403',[],403);
+                }
             }
         }
 

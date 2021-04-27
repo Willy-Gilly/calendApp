@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\Validator;
 
 class LoginController extends BaseController
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+
     /**
      * Register api
      *

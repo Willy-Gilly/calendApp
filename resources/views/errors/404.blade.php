@@ -3,7 +3,7 @@
 @section('title', __('home.error').' 404')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">{{__('home.missingError')}}</h1>
+    <h1 class="m-0 text-dark">{{__('home.error').' 404'}}</h1>
     @php header("HTTP/1.0 404 Not Found"); @endphp
 @stop
 

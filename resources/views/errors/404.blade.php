@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Erreur')
+@section('title', __('home.error').' 404')
 
 @section('content_header')
     <h1 class="m-0 text-dark">{{__('home.missingError')}}</h1>

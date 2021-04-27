@@ -31,6 +31,34 @@
                     </div>
                     <div class="card-body cardBodySocial">
                         <form class="form-group">
+                            <div id="frContainer">
+                                <div class="card card-body">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            hey
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm custom-control custom-checkbox">
+                                                <input class="custom-control-input input-friendRequest" name="friendRequest[]" type="checkbox" id="{{"fr".($count ?? 0)}}">
+                                                <label for="{{"fr".($count ?? 0)}}" class="custom-control-label">{{__('notification.check')}}</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card card-body">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            hey
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm custom-control custom-checkbox">
+                                                <input class="custom-control-input input-friendRequest" name="friendRequest[]" type="checkbox" id="{{"fr".($count ?? 1)}}">
+                                                <label for="{{"fr".($count ?? 1)}}" class="custom-control-label">{{__('notification.check')}}</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row optionRowDiv">
                                 <div class="col-sm custom-control custom-checkbox">
                                     <input class="custom-control-input input-friendRequest" type="checkbox" id="checkAllFriendRequest" checked="">
@@ -154,5 +182,12 @@
 
             })
         );
+    </script>
+    <script>
+        $('#checkAllFriendRequest').onchange = function (){
+            $("#input").each(function() {
+                console.log( $(this).parent().attr("id") );
+            });
+        }
     </script>
 @stop

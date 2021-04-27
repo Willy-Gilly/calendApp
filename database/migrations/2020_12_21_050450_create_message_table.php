@@ -16,9 +16,11 @@ class CreateMessageTable extends Migration
         Schema::create('message', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('userFrom');
-            $table->bigInteger('userTo');
+            $table->bigInteger('userTo'); // in case of message to team chat or structure chat, use id of structure/team
             $table->longText('message')->nullable();
             $table->boolean('isRead')->default(false);
+            $table->boolean('isTeamChat')->default(false);
+            $table->boolean('isStructureChat')->default(false);
             $table->timestamps();
         });
     }

@@ -19,5 +19,11 @@
 @stop
 
 @section('js')
+    <script>
+        $.ready(
+            $(function() {
 
+            })
+        );
+    </script>
 @stop

@@ -9,6 +9,6 @@ class Message extends Model
     protected $table = "message";
 
     protected $fillable = [
-        "userFrom", "userTo", "message", "isRead", "created_at", "updated_at",
+        "userFrom", "userTo", "message", "isRead", "isTeamChat", "isStructureChat", "created_at", "updated_at",
     ];
 }

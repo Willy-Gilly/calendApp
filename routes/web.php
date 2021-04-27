@@ -84,6 +84,10 @@ Route::get('lang/get', function () {
     return session()->get('lang');
 })->middleware('setLocale');
 
+Route::get('/test',function () {
+    return view('admin.dashboard');
+});
+
 Route::group(['middleware' => 'auth'], function() { // Notifications
 //Toast only
     Route::get('/div/updateNotifs', 'View\\HomeViewController@addNotification')->name('updateNotifs');

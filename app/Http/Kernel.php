@@ -45,7 +45,7 @@ class Kernel extends HttpKernel
         TrimStrings::class,
         ConvertEmptyStringsToNull::class,
         'setLocale' => SetLocale::class,
-        ForceJsonResponse::class,
+        //ForceJsonResponse::class,
     ];
 
     /**

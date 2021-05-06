@@ -71,6 +71,11 @@ class LoginController extends BaseController
         }
     }
 
+    /**
+     * Logout API
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     */
     public function logout (Request $request) {
         $token = $request->user()->token();
         $token->revoke();

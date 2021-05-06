@@ -72,10 +72,10 @@ class Handler extends ExceptionHandler
                 {
                     return redirect('error503');
                 }
-                else
-                {
-                    return (new BaseController())->sendError(__('home.error').' 503',[],503);
-                }
+            }
+            else
+            {
+                return (new BaseController())->sendError(__('home.error').' 503',[],503);
             }
         }
         else if($exception instanceof TooManyRequestsHttpException)
@@ -85,10 +85,10 @@ class Handler extends ExceptionHandler
                 {
                     return redirect('error429');
                 }
-                else
-                {
-                    return (new BaseController())->sendError(__('home.error').' 423',[],423);
-                }
+            }
+            else
+            {
+                return (new BaseController())->sendError(__('home.error').' 423',[],423);
             }
         }
         else if($exception instanceof UnauthorizedHttpException){
@@ -97,10 +97,10 @@ class Handler extends ExceptionHandler
                 {
                     return redirect('error403');
                 }
-                else
-                {
-                    return (new BaseController())->sendError(__('home.error').' 403',[],403);
-                }
+            }
+            else
+            {
+                return (new BaseController())->sendError(__('home.error').' 403',[],403);
             }
         }
 

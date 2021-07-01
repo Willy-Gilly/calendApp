@@ -17,7 +17,6 @@ class LoginController extends BaseController
         parent::__construct();
     }
 
-
     /**
      * Register api
      *
@@ -63,7 +62,6 @@ class LoginController extends BaseController
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
             $user = Auth::user();
             $success['token'] = $user->createToken('MyApp')->accessToken;
-            $success['name'] = $user->pseudo;
             return $this->sendResponse($success, 'User login successfully.');
         }
         else{
